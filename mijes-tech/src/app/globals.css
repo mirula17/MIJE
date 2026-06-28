@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --pink-primary: #E8547A;
+  --pink-dark:    #C9184A;
+  --pink-light:   #FFF0F4;
+  --pink-medium:  #FFB3CC;
+  --rose-bg:      #FFF5F7;
+  --rose-border:  #FFD6E4;
+  --onyx:         #1A1A1A;
+  --charcoal:     #333333;
+  --muted:        #888888;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--rose-bg);
+  color: var(--onyx);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFF0F4; }
+::-webkit-scrollbar-thumb { background: #FFB3CC; border-radius: 3px; }
+
+/* ── Reusable utility classes ── */
+@layer components {
+  .btn-pink {
+    @apply inline-flex items-center gap-2 px-6 py-2.5 bg-[#E8547A] text-white text-sm font-semibold rounded-full hover:bg-[#C9184A] transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-2.5 border-2 border-[#E8547A] text-[#E8547A] text-sm font-semibold rounded-full hover:bg-[#FFF0F4] transition-all duration-200;
+  }
+  .card-base {
+    @apply bg-white border border-[#FFD6E4] rounded-2xl p-6 hover:shadow-lg hover:border-[#E8547A] transition-all duration-200;
+  }
+  .section-label {
+    @apply text-[11px] font-semibold tracking-[0.15em] text-[#E8547A] uppercase;
+  }
+  .heading-serif {
+    @apply font-serif font-bold text-[#1A1A1A] tracking-tight;
+  }
+  .pink-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 bg-[#FFF0F4] border border-[#FFD6E4] rounded-full text-[11px] font-semibold text-[#E8547A] uppercase tracking-wide;
+  }
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  50%       { opacity: 0.6; transform: scale(1.2) rotate(15deg); }
+}
+.sparkle { animation: sparkle 2s ease-in-out infinite; }
+.sparkle-delay { animation: sparkle 2s ease-in-out infinite 0.7s; }
+
+/* Heart pulse */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.15); }
+}
+.heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
