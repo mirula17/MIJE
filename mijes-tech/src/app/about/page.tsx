@@ -1,5 +1,5 @@
 import React from "react";
-import { MJLogo, EnvelopeIcon, HeartIcon } from "../../../components/icons";
+import { MJLogo, EnvelopeIcon, HeartIcon } from "../../components/icons";
 
 export const metadata = {
   title: "About — Mijes Tech",
