@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { NavLogo } from "../../components/icons";
+import { NavLogo } from "../../../components/icons";
 
 export default function AdminLogin() {
   const router = useRouter();
